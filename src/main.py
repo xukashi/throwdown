@@ -30,52 +30,38 @@ from .window import ThrowdownWindow
 
 
 class ThrowdownApplication(Adw.Application):
-    """The main application singleton class."""
-
     def __init__(self):
         super().__init__(application_id='dev.yioannides.Throwdown',
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
                          resource_base_path='/dev/yioannides/Throwdown')
         self.create_action('quit', lambda *_: self.quit(), ['<control>q'])
         self.create_action('about', self.on_about_action)
-        self.create_action('preferences', self.on_preferences_action)
+        self.create_action('shortcuts', self.on_shortcuts_action, ['<control>question'])
+        self.set_accels_for_action('win.next-trick', ['space'])
 
     def do_activate(self):
-        """Called when the application is activated.
-
-        We raise the application's main window, creating it if
-        necessary.
-        """
         win = self.props.active_window
         if not win:
             win = ThrowdownWindow(application=self)
         win.present()
 
     def on_about_action(self, *args):
-        """Callback for the app.about action."""
         about = Adw.AboutDialog(application_name='Throwdown',
                                 application_icon='dev.yioannides.Throwdown',
                                 developer_name='yiannis ioannides',
                                 version='0.1.0',
-                                # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-                                translator_credits = _('translator-credits'),
+                                issue_url='https://gitlab.com/yioannides/throwdown/issues/',
+                                translator_credits=_('translator-credits'),
                                 developers=['yiannis ioannides'],
                                 copyright='© 2026 yiannis ioannides')
         about.present(self.props.active_window)
 
-    def on_preferences_action(self, widget, _):
-        """Callback for the app.preferences action."""
-        print('app.preferences action activated')
+    def on_shortcuts_action(self, *args):
+        builder = Gtk.Builder.new_from_resource('/dev/yioannides/Throwdown/shortcuts-dialog.ui')
+        dialog = builder.get_object('shortcuts_dialog')
+        dialog.present(self.props.active_window)
 
     def create_action(self, name, callback, shortcuts=None):
-        """Add an application action.
-
-        Args:
-            name: the name of the action
-            callback: the function to be called when the action is
-              activated
-            shortcuts: an optional list of accelerators
-        """
         action = Gio.SimpleAction.new(name, None)
         action.connect("activate", callback)
         self.add_action(action)
@@ -84,6 +70,5 @@ class ThrowdownApplication(Adw.Application):
 
 
 def main(version):
-    """The application's entry point."""
     app = ThrowdownApplication()
     return app.run(sys.argv)

@@ -1,0 +1,199 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ThrowdownWindow: Adw.ApplicationWindow {
+  title: _("Throwdown");
+  default-width: 750;
+  default-height: 300;
+
+  content: Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [start]
+      MenuButton difficulty_button {
+        halign: center;
+        label: _("Difficulty");
+        menu-model: difficulty_menu;
+      }
+
+      [end]
+      MenuButton {
+        primary: true;
+        icon-name: "open-menu-symbolic";
+        tooltip-text: _("Main Menu");
+        menu-model: primary_menu;
+      }
+    }
+
+    content: Stack main_stack {
+      transition-type: crossfade;
+      transition-duration: 125;
+
+      StackPage {
+        name: "welcome";
+        title: _("Welcome");
+
+        child: Box {
+          orientation: horizontal;
+          spacing: 48;
+
+          halign: center;
+          valign: center;
+          hexpand: true;
+          vexpand: true;
+
+          margin-top: 24;
+          margin-bottom: 24;
+          margin-start: 24;
+          margin-end: 24;
+
+          Image {
+            icon-name: "dev.yioannides.Throwdown";
+            pixel-size: 256;
+
+            halign: center;
+            valign: center;
+          }
+
+          Box {
+            orientation: vertical;
+            spacing: 16;
+
+            valign: center;
+            hexpand: true;
+            width-request: 320;
+
+            Label {
+              label: _("Hey! What's good?");
+              wrap: true;
+              justify: center;
+              xalign: 0.5;
+
+              styles [
+                "title-1",
+              ]
+            }
+
+            Label {
+              label: _("Choose your difficulty to get started!");
+              wrap: true;
+              justify: center;
+              xalign: 0.5;
+            }
+          }
+        };
+      }
+
+      StackPage {
+        name: "trick";
+        title: _("Trick");
+
+        child: Box {
+          orientation: vertical;
+
+          hexpand: true;
+          vexpand: true;
+
+          margin-top: 24;
+          margin-bottom: 24;
+          margin-start: 48;
+          margin-end: 48;
+
+          Stack trick_stack {
+            hexpand: true;
+            vexpand: true;
+
+            transition-type: crossfade;
+            transition-duration: 85;
+
+            StackPage {
+              name: "a";
+
+              child: Label trick_a {
+                wrap: true;
+                justify: center;
+                xalign: 0.5;
+                yalign: 0.5;
+
+                styles [
+                  "title-1",
+                ]
+              };
+            }
+
+            StackPage {
+              name: "b";
+
+              child: Label trick_b {
+                wrap: true;
+                justify: center;
+                xalign: 0.5;
+                yalign: 0.5;
+
+                styles [
+                  "title-1",
+                ]
+              };
+            }
+          }
+
+          Box {
+            halign: center;
+            valign: end;
+
+            Label {
+              label: _("Press");
+            }
+
+            ShortcutsShortcut {
+              accelerator: "space";
+              margin-start: 12;
+            }
+
+            Label {
+              label: _("for a new trick!");
+            }
+          }
+        };
+      }
+    };
+  };
+}
+
+menu difficulty_menu {
+  item {
+    label: _("Easy");
+    action: "win.easy";
+  }
+
+  item {
+    label: _("Medium");
+    action: "win.medium";
+  }
+
+  item {
+    label: _("Hard");
+    action: "win.hard";
+  }
+
+  section {
+    item {
+      label: _("Random");
+      action: "win.random";
+    }
+  }
+}
+
+menu primary_menu {
+  section {
+    // item {
+    //   label: _("_Keyboard Shortcuts");
+    //   action: "app.shortcuts";
+    // }
+
+    item {
+      label: _("_About Throwdown");
+      action: "app.about";
+    }
+  }
+}

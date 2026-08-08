@@ -29,7 +29,9 @@ configure_file(
 throwdown_sources = [
   '__init__.py',
   'main.py',
+  'randomizer.py',
   'window.py',
 ]
 
 install_data(throwdown_sources, install_dir: moduledir)
+install_data('assets/tricks.json', install_dir: moduledir)
