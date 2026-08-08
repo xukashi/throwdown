@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="throwdown">
+	<schema id="dev.yioannides.Throwdown" path="/dev/yioannides/Throwdown/">
+	</schema>
+</schemalist>
