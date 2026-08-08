@@ -1,9 +1,19 @@
-<img heigth="128" src="data/icons/hicolor/scalable/apps/dev.yioannides.Throwdown.svg" align="left" />
+<p align="center">
+  <img src="data/icons/hicolor/scalable/apps/dev.yioannides.Throwdown.svg" />
+</p>
 
-# Throwdown
+<h1 align="center">
+  Throwdown
+</h1>
 
-Throwdown is a minimal libadwaita-based GTK4 app written in Python for generating random skate trick combos with adjustable difficulty!
+<p align="center">
+  <img src="data/screenshots/throwdown-ui.png" />
+</p>
 
-![Throwdown](data/screenshots/throwdown-ui.png)
+<h5 align="center">
+  Throwdown is a fun little libadwaita/GTK4 app written in Python for<br> generating random skate trick combos with adjustable difficulty!
+</h5>
 
-More soon
+---
+
+MORE SOON
