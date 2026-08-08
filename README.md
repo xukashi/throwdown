@@ -25,3 +25,10 @@ Originally created as a standalone CLI app (drafted in bash / completed in Pytho
 - Three levels of difficulty (easy, medium, hard) and random mode
 - Type of modules: stance, direction, spin, flip, grind, lateflip & ground tricks
 - Named tricks (example: `Fakie BS 360` -> `Full Cab`)
+
+### resources (for absolute beginners):
+
+- Built using [GNOME Builder](https://flathub.org/en/apps/org.gnome.Builder)'s Python template
+- [Welcome To GNOME portal](https://welcome.gnome.org/team/programming/) for cloning and studying completed / published Python apps
+- [Workbench](https://flathub.org/en/apps/re.sonny.Workbench) by Sonny Piers
+- GeopJr's [GTK4 development guide](https://ultimate-gtk4-crystal-guide.geopjr.dev/) (primarily focused on the Crystal language, but offers invaluable transferable knowledge on the start-to-end process of preparing and developing a GTK4 app)
