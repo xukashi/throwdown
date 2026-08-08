@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="data/icons/hicolor/scalable/apps/dev.yioannides.Throwdown.svg" />
+  <img src="data/screenshots/throwdown-large.png" />
 </p>
 
 <h1 align="center">
