@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/dev.yioannides.Throwdown.desktop.in
+data/dev.yioannides.Throwdown.metainfo.xml.in
+data/dev.yioannides.Throwdown.gschema.xml
+src/main.py
+src/window.py
+src/window.ui
