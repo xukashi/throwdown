@@ -36,7 +36,6 @@ class ThrowdownApplication(Adw.Application):
                          resource_base_path='/dev/yioannides/Throwdown')
         self.create_action('quit', lambda *_: self.quit(), ['<control>q'])
         self.create_action('about', self.on_about_action)
-        self.create_action('shortcuts', self.on_shortcuts_action, ['<control>question'])
         self.set_accels_for_action('win.next-trick', ['space'])
 
     def do_activate(self):
@@ -55,11 +54,6 @@ class ThrowdownApplication(Adw.Application):
                                 developers=['yiannis ioannides'],
                                 copyright='© 2026 yiannis ioannides')
         about.present(self.props.active_window)
-
-    def on_shortcuts_action(self, *args):
-        builder = Gtk.Builder.new_from_resource('/dev/yioannides/Throwdown/shortcuts-dialog.ui')
-        dialog = builder.get_object('shortcuts_dialog')
-        dialog.present(self.props.active_window)
 
     def create_action(self, name, callback, shortcuts=None):
         action = Gio.SimpleAction.new(name, None)
