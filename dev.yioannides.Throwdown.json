@@ -1,7 +1,7 @@
 {
     "id" : "dev.yioannides.Throwdown",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "48",
+    "runtime-version" : "49",
     "sdk" : "org.gnome.Sdk",
     "command" : "throwdown",
     "finish-args" : [
@@ -32,7 +32,15 @@
                     "type" : "git",
                     "url" : "file:///home/yiannis/Projects/builder"
                 }
+            ],
+            "config-opts" : [
+                "--libdir=lib"
             ]
         }
-    ]
+    ],
+    "build-options" : {
+        "env" : {
+            "GTK_DEBUG" : "interactive"
+        }
+    }
 }
