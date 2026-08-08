@@ -1,4 +1,4 @@
-<img heigth="128" src="data/icons/hicolor/scalable/apps/dev.ioannides.Throwdown.svg" align="left" />
+<img heigth="128" src="data/icons/hicolor/scalable/apps/dev.yioannides.Throwdown.svg" align="left" />
 
 # Throwdown
 
