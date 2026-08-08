@@ -10,9 +10,9 @@
   <img src="data/screenshots/throwdown-ui.png" />
 </p>
 
-<h5 align="center">
+<p align="center">
   Throwdown is a fun little libadwaita/GTK4 app written in Python for<br> generating random skate trick combos with adjustable difficulty!
-</h5>
+</p>
 
 ---
 
