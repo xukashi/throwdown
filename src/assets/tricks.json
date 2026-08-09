@@ -7,7 +7,7 @@
 	],
 
 	"direction": [
-		"Frontside", 
+		"Frontside",
 		"Backside"
 	],
 
@@ -26,20 +26,20 @@
 	"midpop": [
 		"FS Pop Shove-it 360",
 		"BS Pop Shove-it 360",
-		"Varial Flip", 
-		"Varial Heel", 
-		"Hardflip", 
-		"Inward Heel", 
+		"Varial Flip",
+		"Varial Heel",
+		"Hardflip",
+		"Inward Heel",
 		"Impossible"
 	],
 
 	"lowpop": [
 		"360 Flip",
-		"Laserflip", 
-		"Hardflip 360", 
+		"Laserflip",
+		"Hardflip 360",
 		"Inward 360"
 	],
-	
+
 	"pressure": [
 		"Pressure Flip",
 		"Pressure Heelflip",
@@ -48,14 +48,15 @@
 		"Pressure 360 Flip",
 		"Pressure Hardflip 360"
 	],
-	
+
 	"late": [
 		"Late Kickflip",
 		"Late Heelflip",
 		"Late FS Shove-it",
-		"Late BS Shove-it"
+		"Late BS Shove-it",
+		"Late One Foot"
 	],
-	
+
 	"popout": [
 		"Kickflip",
 		"Heelflip",
@@ -90,13 +91,16 @@
 		"Manual",
 		"Nose Manual",
 		"Casper",
+		"Anti-Casper",
 		"Primo"
 	],
-	
+
 	"aliases": {
-		"Fakie Backside 180": "Half Cab",
+		"Fakie Backside 180": "BS Half Cab",
+		"Fakie Frontside 180": "FS Half Cab",
 		"Fakie Backside 360 Kickflip": "Caballerial",
-		"Fakie Backside 360": "Full Cab",
+		"Fakie Backside 360": "BS Full Cab",
+		"Fakie Frontside 360": "FS Full Cab",
 		"Backside Hardflip": "Modern Ghetto Bird",
 		"Frontside Varial Flip": "Kickflip Body Varial",
 		"Backside Varial Heel": "Heelflip Body Varial",
