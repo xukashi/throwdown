@@ -79,6 +79,8 @@ def _format(trick_list):
 def _apply_aliases(combo):
     for original in sorted(_aliases, key=len, reverse=True):
         combo = combo.replace(original, _aliases[original])
+        if "Modern Ghetto Bird 360" in combo:
+            combo = combo.replace("Modern Ghetto Bird 360", "Backside Hardflip 360")
     return combo
 
 
