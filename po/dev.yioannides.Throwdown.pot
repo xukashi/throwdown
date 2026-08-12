@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-12 13:20+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/dev.yioannides.Throwdown.desktop.in:2
+#: data/dev.yioannides.Throwdown.metainfo.xml.in:7 src/gtk/window.ui:10
+msgid "Throwdown"
+msgstr ""
+
+#. Don't translate the semicolons!
+#: data/dev.yioannides.Throwdown.desktop.in:9
+msgid "skateboard;skate;trick;challenge;"
+msgstr ""
+
+#: data/dev.yioannides.Throwdown.metainfo.xml.in:8
+msgid "Improve your skateboarding skills!"
+msgstr ""
+
+#: data/dev.yioannides.Throwdown.metainfo.xml.in:10
+msgid ""
+"Throwdown is a minimal GNOME app for generating random skateboarding trick "
+"sequences! Features include:"
+msgstr ""
+
+#: data/dev.yioannides.Throwdown.metainfo.xml.in:12
+msgid "Three levels of difficulty (easy, medium, hard) and random mode"
+msgstr ""
+
+#. Translate as much as your language allows you to, but using the original words is not a problem either
+#: data/dev.yioannides.Throwdown.metainfo.xml.in:14
+msgid ""
+"Type of modules: stance, direction, spin, flip, grind, late flip and ground "
+"tricks"
+msgstr ""
+
+#: data/dev.yioannides.Throwdown.metainfo.xml.in:15
+msgid "Named tricks (example: Fakie BS 360 -> Full Cab)"
+msgstr ""
+
+#: data/dev.yioannides.Throwdown.metainfo.xml.in:45
+msgid "Main window"
+msgstr ""
+
+#: src/gtk/window.ui:20
+msgid "Difficulty"
+msgstr ""
+
+#: src/gtk/window.ui:28
+msgid "Main Menu"
+msgstr ""
+
+#: src/gtk/window.ui:41
+msgid "Welcome"
+msgstr ""
+
+#. To be translated informally (but politely, like "What's up?")
+#: src/gtk/window.ui:71
+msgid "Hey! What's good?"
+msgstr ""
+
+#: src/gtk/window.ui:82
+msgid "Choose your difficulty to get started!"
+msgstr ""
+
+#: src/gtk/window.ui:97
+msgid "Trick"
+msgstr ""
+
+#. For context: the full string is "Press <space> for a new trick!"
+#: src/gtk/window.ui:153
+msgid "Press"
+msgstr ""
+
+#. For context: the full string is "Press <space> for a new trick!"
+#: src/gtk/window.ui:164
+msgid "for a new trick!"
+msgstr ""
+
+#: src/gtk/window.ui:180 src/window.py:59
+msgid "Easy"
+msgstr ""
+
+#: src/gtk/window.ui:184 src/window.py:60
+msgid "Medium"
+msgstr ""
+
+#: src/gtk/window.ui:188 src/window.py:61
+msgid "Hard"
+msgstr ""
+
+#: src/gtk/window.ui:193 src/window.py:62
+msgid "Random"
+msgstr ""
+
+#: src/gtk/window.ui:201
+msgid "About Throwdown"
+msgstr ""
+
+#. Add your name like this:
+#.
+#. Artur Klevans <translation@arturklevans.com>
+#: src/main.py:53
+msgid "translator-credits"
+msgstr ""
