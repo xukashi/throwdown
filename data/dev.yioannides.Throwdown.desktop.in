@@ -4,7 +4,8 @@ Exec=throwdown
 Icon=dev.yioannides.Throwdown
 Terminal=false
 Type=Application
-Categories=Utility;
-Keywords=GTK;
+Categories=GTK;GNOME;Game;
+# TRANSLATORS: do NOT translate or localize the semicolons!
+Keywords=skateboard;skate;trick;challenge;
 StartupNotify=true
 DBusActivatable=true
