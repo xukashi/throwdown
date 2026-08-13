@@ -38,7 +38,7 @@ corresponding .blp file and regenerate this file with blueprint-compiler.
             <child>
               <object class="GtkStackPage">
                 <property name="name">welcome</property>
-                <property name="title" translatable="yes">Welcome</property>
+                <property name="title" translatable="yes">Welcome S</property>
                 <property name="child">
                   <object class="GtkBox">
                     <property name="orientation">0</property>
@@ -53,7 +53,7 @@ corresponding .blp file and regenerate this file with blueprint-compiler.
                     <property name="margin-end">24</property>
                     <child>
                       <object class="GtkImage">
-                        <property name="icon-name">dev.yioannides.Throwdown</property>
+                        <property name="file">/app/share/throwdown/throwdown-large.png</property>
                         <property name="pixel-size">256</property>
                         <property name="halign">3</property>
                         <property name="valign">3</property>
@@ -198,7 +198,7 @@ corresponding .blp file and regenerate this file with blueprint-compiler.
   <menu id="primary_menu">
     <section>
       <item>
-        <attribute name="label" translatable="yes">_About Throwdown</attribute>
+        <attribute name="label" translatable="yes">About Throwdown</attribute>
         <attribute name="action">app.about</attribute>
       </item>
     </section>
