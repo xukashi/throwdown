@@ -44,3 +44,8 @@ configure_file(
 )
 
 subdir('icons')
+
+install_data(
+  'screenshots/throwdown-large.png',
+  install_dir: get_option('datadir') / 'throwdown'
+)
