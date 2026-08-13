@@ -30,7 +30,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/yioannides/throwdown"
+                    "url" : "https://github.com/yioannides/throwdown.git"
                 }
             ],
             "config-opts" : [
