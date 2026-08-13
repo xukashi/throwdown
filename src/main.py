@@ -31,9 +31,9 @@ from .window import ThrowdownWindow
 
 class ThrowdownApplication(Adw.Application):
     def __init__(self):
-        super().__init__(application_id='dev.yioannides.Throwdown',
+        super().__init__(application_id='io.github.yioannides.Throwdown',
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
-                         resource_base_path='/dev/yioannides/Throwdown')
+                         resource_base_path='/io/github/yioannides/Throwdown')
         self.create_action('quit', lambda *_: self.quit(), ['<control>q'])
         self.create_action('about', self.on_about_action)
         self.set_accels_for_action('win.next-trick', ['space'])
@@ -46,7 +46,7 @@ class ThrowdownApplication(Adw.Application):
 
     def on_about_action(self, *args):
         about = Adw.AboutDialog(application_name='Throwdown',
-                                application_icon='dev.yioannides.Throwdown',
+                                application_icon='io.github.yioannides.Throwdown',
                                 developer_name='yiannis ioannides',
                                 version='0.1.0',
                                 issue_url='https://gitlab.com/yioannides/throwdown/issues/',

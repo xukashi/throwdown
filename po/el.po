@@ -18,21 +18,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 50.0\n"
 
-#: data/dev.yioannides.Throwdown.desktop.in:2
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:7 src/gtk/window.ui:10
+#: data/io.github.yioannides.Throwdown.desktop.in:2
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:7 src/gtk/window.ui:10
 msgid "Throwdown"
 msgstr "Throwdown"
 
 #. Don't translate the semicolons!
-#: data/dev.yioannides.Throwdown.desktop.in:9
+#: data/io.github.yioannides.Throwdown.desktop.in:9
 msgid "skateboard;skate;trick;challenge;"
 msgstr "σκέϊτμπορντ;σκέϊτ;κόλπο;πρόκληση;"
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:8
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:8
 msgid "Improve your skateboarding skills!"
 msgstr "Βελτίωσε τις ικανότητες σου στο σκέϊτμπορντινγκ!"
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:10
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:10
 msgid ""
 "Throwdown is a minimal GNOME app for generating random skateboarding trick "
 "sequences! Features include:"
@@ -40,12 +40,12 @@ msgstr ""
 "Το Throwdown είναι μια εφαρμογή για το GNOME για να παράγεις τυχαίες "
 "ακολουθείες κόλπων του σκέϊτμπορντ! Κάποια χαρακτηριστικά:"
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:12
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:12
 msgid "Three levels of difficulty (easy, medium, hard) and random mode"
 msgstr "Τρία επίπεδα δυσκολίας (εύκολο, μέτριο, δύσκολο) και τυχαίο"
 
 #. Translate as much as your language allows you to, but using the original words is not a problem either
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:14
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:14
 msgid ""
 "Type of modules: stance, direction, spin, flip, grind, late flip and ground "
 "tricks"
@@ -53,11 +53,11 @@ msgstr ""
 "Τύποι δομοστοιχείων: στάση, πορεία, περιστροφή, flip, grind, late flip και "
 "κόλπα εδάφους"
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:15
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:15
 msgid "Named tricks (example: Fakie BS 360 -> Full Cab)"
 msgstr "Επώνυμα κόλπα (παράδειγμα: Fakie BS 360 -> Full Cab)"
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:45
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:45
 msgid "Main window"
 msgstr "Κυρίως παράθυρο"
 
