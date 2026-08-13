@@ -35,7 +35,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/yioannides/throwdown.git",
-                    "branch": "master"
+                    "branch": "main"
                 }
             ],
 
