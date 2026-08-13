@@ -33,7 +33,7 @@ jobs:
         run: |
           flatpak build-bundle \
             repo \
-            Throwdown.flatpak \
+            throwdown.flatpak \
             io.github.yioannides.Throwdown \
             stable \
             --runtime-repo=https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -41,5 +41,5 @@ jobs:
       - name: Upload bundle
         uses: actions/upload-artifact@v4
         with:
-          name: Throwdown.flatpak
-          path: Throwdown.flatpak
+          name: throwdown.flatpak
+          path: throwdown.flatpak
