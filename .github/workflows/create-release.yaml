@@ -1,0 +1,75 @@
+name: throwdown-releases
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  flatpak:
+    name: "Flatpak ${{ matrix.arch }}"
+    runs-on: ${{ matrix.runner }}
+
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-50
+      options: --privileged
+
+    strategy:
+      matrix:
+        include:
+          - arch: x86_64
+            runner: ubuntu-24.04
+
+          - arch: aarch64
+            runner: ubuntu-24.04-arm
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+        with:
+          bundle: throwdown-${{ matrix.arch }}.flatpak
+          manifest-path: io.github.yioannides.Throwdown.json
+          cache-key: flatpak-builder-${{ matrix.arch }}-${{ github.sha }}
+          arch: ${{ matrix.arch }}
+
+  release:
+    name: Create Release
+    needs: [flatpak]
+    runs-on: ubuntu-latest
+
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download Flatpak artifacts
+        uses: actions/download-artifact@v5
+        with:
+          path: artifacts
+
+      - name: Prepare release files
+        run: |
+          mkdir -p release-files
+          find artifacts -type f -name "*.flatpak" -exec cp {} release-files/ \;
+          ls -lh release-files/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "build-${{ github.run_number }}"
+          name: "Throwdown build ${{ github.run_number }}"
+          body: |
+            Automated Flatpak build from commit ${{ github.sha }}.
+
+            ## Downloads
+
+            - `throwdown-x86_64.flatpak` — x86_64
+            - `throwdown-aarch64.flatpak` — ARM64
+          files: release-files/*.flatpak
+          generate_release_notes: true
+          prerelease: true
+          make_latest: false
