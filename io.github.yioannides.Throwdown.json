@@ -29,8 +29,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/yioannides/throwdown.git"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ],
             "config-opts" : [

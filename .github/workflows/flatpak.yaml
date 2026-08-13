@@ -1,0 +1,45 @@
+name: Build Flatpak
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Git commit, branch, or tag to build"
+        required: true
+        default: "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/flathub/flatpak-builder:gnome-50
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Build Flatpak
+        run: |
+          flatpak-builder \
+            --force-clean \
+            --repo=repo \
+            build-dir \
+            io.github.yioannides.Throwdown.json
+
+      - name: Create bundle
+        run: |
+          flatpak build-bundle \
+            repo \
+            Throwdown.flatpak \
+            io.github.yioannides.Throwdown \
+            stable \
+            --runtime-repo=https://dl.flathub.org/repo/flathub.flatpakrepo
+
+      - name: Upload bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: Throwdown.flatpak
+          path: Throwdown.flatpak
