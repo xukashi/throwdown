@@ -65,7 +65,6 @@ jobs:
             ## Downloads
 
             - `throwdown-x86_64.flatpak` — x86_64
-            - `throwdown-aarch64.flatpak` — ARM64
           files: release-files/*.flatpak
           generate_release_notes: true
           prerelease: true
