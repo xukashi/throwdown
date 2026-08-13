@@ -30,7 +30,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "file:///home/yiannis/Projects/builder"
+                    "url" : "."
                 }
             ],
             "config-opts" : [
@@ -39,8 +39,6 @@
         }
     ],
     "build-options" : {
-        "env" : {
-            "GTK_DEBUG" : "interactive"
-        }
+        "env" : {        }
     }
 }
