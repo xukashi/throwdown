@@ -31,7 +31,7 @@ template $ThrowdownWindow: Adw.ApplicationWindow {
 
       StackPage {
         name: "welcome";
-        title: _("Welcome");
+        title: _("Welcome S");
 
         child: Box {
           orientation: horizontal;
@@ -48,7 +48,7 @@ template $ThrowdownWindow: Adw.ApplicationWindow {
           margin-end: 24;
 
           Image {
-            icon-name: "dev.yioannides.Throwdown";
+            file: "/app/share/throwdown/throwdown-large.png";
             pixel-size: 256;
 
             halign: center;
@@ -187,12 +187,12 @@ menu difficulty_menu {
 menu primary_menu {
   section {
     // item {
-    //   label: _("_Keyboard Shortcuts");
+    //   label: _("Keyboard Shortcuts");
     //   action: "app.shortcuts";
     // }
 
     item {
-      label: _("_About Throwdown");
+      label: _("About Throwdown");
       action: "app.about";
     }
   }
