@@ -1,4 +1,4 @@
-application_id = 'dev.yioannides.Throwdown'
+application_id = 'io.github.yioannides.Throwdown'
 
 scalable_dir = 'hicolor' / 'scalable' / 'apps'
 install_data(
@@ -11,3 +11,4 @@ install_data(
   symbolic_dir / ('@0@-symbolic.svg').format(application_id),
   install_dir: get_option('datadir') / 'icons' / symbolic_dir
 )
+

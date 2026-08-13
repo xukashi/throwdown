@@ -22,7 +22,7 @@ from gi.repository import Adw, Gio, Gtk
 from .randomizer import generate_trick
 
 
-@Gtk.Template(resource_path="/dev/yioannides/Throwdown/window.ui")
+@Gtk.Template(resource_path="/io/github/yioannides/Throwdown/window.ui")
 class ThrowdownWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'ThrowdownWindow'
 

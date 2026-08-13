@@ -17,42 +17,42 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/dev.yioannides.Throwdown.desktop.in:2
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:7 src/gtk/window.ui:10
+#: data/io.github.yioannides.Throwdown.desktop.in:2
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:7 src/gtk/window.ui:10
 msgid "Throwdown"
 msgstr ""
 
 #. Don't translate the semicolons!
-#: data/dev.yioannides.Throwdown.desktop.in:9
+#: data/io.github.yioannides.Throwdown.desktop.in:9
 msgid "skateboard;skate;trick;challenge;"
 msgstr ""
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:8
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:8
 msgid "Improve your skateboarding skills!"
 msgstr ""
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:10
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:10
 msgid ""
 "Throwdown is a minimal GNOME app for generating random skateboarding trick "
 "sequences! Features include:"
 msgstr ""
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:12
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:12
 msgid "Three levels of difficulty (easy, medium, hard) and random mode"
 msgstr ""
 
 #. Translate as much as your language allows you to, but using the original words is not a problem either
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:14
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:14
 msgid ""
 "Type of modules: stance, direction, spin, flip, grind, late flip and ground "
 "tricks"
 msgstr ""
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:15
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:15
 msgid "Named tricks (example: Fakie BS 360 -> Full Cab)"
 msgstr ""
 
-#: data/dev.yioannides.Throwdown.metainfo.xml.in:45
+#: data/io.github.yioannides.Throwdown.metainfo.xml.in:45
 msgid "Main window"
 msgstr ""
 
