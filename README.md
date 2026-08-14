@@ -12,6 +12,16 @@
 
 ---
 
+### installation:
+
+Simply paste this command onto your terminal:
+
+```sh
+wget -q https://github.com/yioannides/throwdown/releases/latest/download/throwdown-x86_64.flatpak &&
+flatpak install --user -y ./throwdown-x86_64.flatpak
+
+```
+
 ### introduction:
 
 Originally created as a standalone CLI app (drafted in bash / completed in Python) for getting better at skateboarding (in real life, as well as in video games like Session: Skate Sim and Skater XL). I always wanted to develop a libadwaita app, so this became the perfect challenge for me to turn it into my first GTK app as a non-programmer!
