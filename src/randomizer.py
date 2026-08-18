@@ -9,7 +9,6 @@ with open(_TRICKS_PATH, encoding='utf-8') as _file:
 
 _aliases = _tricks['aliases']
 
-
 def _random_elements():
     return {
         'stance': choice(_tricks['stance']),
@@ -24,7 +23,6 @@ def _random_elements():
         'grind': choice(_tricks['grind']),
         'flat': choice(_tricks['flat']),
     }
-
 
 def _combo_pools(e):
     easy = [
@@ -74,13 +72,11 @@ def _combo_pools(e):
 
     return easy, medium, hard
 
-
 def _format(trick_list):
     output = " ".join(str(x) for x in trick_list).strip()
     if output.startswith("to"):
         output = "Ollie " + output
     return output
-
 
 def _apply_aliases(combo):
     for original in sorted(_aliases, key=len, reverse=True):
@@ -88,7 +84,6 @@ def _apply_aliases(combo):
         if "Modern Ghetto Bird 360" in combo:
             combo = combo.replace("Modern Ghetto Bird 360", "Backside Hardflip 360")
     return combo
-
 
 def generate_trick(difficulty):
     easy, medium, hard = _combo_pools(_random_elements())
