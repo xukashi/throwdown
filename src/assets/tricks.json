@@ -17,15 +17,15 @@
 	],
 
 	"highpop": [
-		"FS Pop Shove-it",
-		"BS Pop Shove-it",
 		"Kickflip",
-		"Heelflip"
+		"Heelflip",
+		"BS Pop shove-it",
+		"FS Pop shove-it",
+		"BS Pop shove-it 360",
+		"FS Pop shove-it 360"
 	],
 
 	"midpop": [
-		"FS Pop Shove-it 360",
-		"BS Pop Shove-it 360",
 		"Varial Flip",
 		"Varial Heel",
 		"Hardflip",
@@ -47,23 +47,6 @@
 		"Pressure Inward Heelflip",
 		"Pressure 360 Flip",
 		"Pressure Hardflip 360"
-	],
-
-	"late": [
-		"Late Kickflip",
-		"Late Heelflip",
-		"Late FS Shove-it",
-		"Late BS Shove-it",
-		"Late One Foot"
-	],
-
-	"popout": [
-		"Kickflip",
-		"Heelflip",
-		"FS Shove-it",
-		"BS Shove-it",
-		"FS Shove-it 360",
-		"BS Shove-it 360"
 	],
 
 	"grind": [
@@ -106,13 +89,13 @@
 		"Backside Varial Heel": "Heelflip Body Varial",
 		"Frontside Varial Heel": "Big Heel",
 		"Backside Varial Flip": "Big Flip",
-		"Frontside BS Pop Shove-it": "Backside Big Spin",
-		"Backside FS Pop Shove-it": "Frontside Big Spin",
+		"Frontside FS Pop Shove-it": "FS Big Spin",
+		"Backside BS Pop Shove-it": "BS Big Spin",
 		"Frontside 360 Flip": "Varial Flip Body Varial",
 		"Backside Laserflip": "Varial Heel Body Varial",
 		"Frontside Laserflip": "Bigger Heel",
 		"Backside 360 Flip": "Bigger Flip",
-		"Frontside BS Pop Shove-it 360": "Backside Bigger Spin",
-		"Backside FS Pop Shove-it 360": "Frontside Bigger Spin"
+		"Frontside FS Pop Shove-it 360": "FS Bigger Spin",
+		"Backside BS Pop Shove-it 360": "BS Bigger Spin"
 	}
 }
