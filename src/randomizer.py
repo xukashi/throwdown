@@ -2,75 +2,85 @@ import json
 from pathlib import Path
 from random import choice
 
-_TRICKS_PATH = Path(__file__).parent / 'tricks.json'
+_TRICKS_PATH = Path(__file__).parent / "tricks.json"
 
-with open(_TRICKS_PATH, encoding='utf-8') as _file:
+with _TRICKS_PATH.open(encoding="utf-8") as _file:
     _tricks = json.load(_file)
 
-_aliases = _tricks['aliases']
+_aliases = _tricks["aliases"]
 
-def _random_elements():
-    return {
-        'stance': choice(_tricks['stance']),
-        'direction': choice(_tricks['direction']),
-        'spin': choice(_tricks['spin']),
-        'highpop': choice(_tricks['highpop']),
-        'flips': choice(_tricks['highpop'][:2]),
-        'pops': choice(_tricks['highpop'][3:]),
-        'midpop': choice(_tricks['midpop']),
-        'lowpop': choice(_tricks['lowpop']),
-        'pressure': choice(_tricks['pressure']),
-        'grind': choice(_tricks['grind']),
-        'flat': choice(_tricks['flat']),
-    }
+stance = _tricks["stance"]
+direction = _tricks["direction"]
+spin = _tricks["spin"]
+highpop = _tricks["highpop"]
+midpop = _tricks["midpop"]
+lowpop = _tricks["lowpop"]
+pressure = _tricks["pressure"]
+grind = _tricks["grind"]
+flat = _tricks["flat"]
 
-def _combo_pools(e):
+flips = highpop[:2]
+
+def _combo_pools():
     easy = [
-        [e['stance'], e['midpop']],
-        [e['stance'], "to", e['grind']],
-        [e['stance'], e['direction'], e['spin']],
-        [e['stance'], e['direction'], e['highpop']],
+        [stance, midpop],
+        [stance, "to", grind],
+        [stance, direction, spin],
+        [stance, direction, highpop],
     ]
 
     medium = [
-        [e['stance'], e['lowpop']],
-        [e['stance'], e['pressure']],
-        [e['stance'], e['direction'], e['midpop']],
-        [e['stance'], e['flips'], "to", e['flat']],
-        [e['stance'], e['direction'], e['pressure']],
-        [e['grind'], "to", e['direction'], e['spin']],
-        [e['stance'], e['direction'], e['spin'], e['highpop']],
-        [e['stance'], e['direction'], e['spin'], "to", e['flat']],
-        [e['stance'], e['direction'], e['spin'], "to", e['grind']],
-        [e['stance'], e['direction'], e['highpop'], "to", e['grind']],
+        [stance, lowpop],
+        [stance, pressure],
+        [stance, direction, midpop],
+        [stance, flips, "to", flat],
+        [stance, direction, pressure],
+        [grind, "to", direction, spin],
+        [stance, direction, spin, highpop],
+        [stance, direction, spin, "to", flat],
+        [stance, direction, spin, "to", grind],
+        [stance, direction, highpop, "to", grind],
     ]
 
     hard = [
-        [e['grind'], "to", e['highpop']],
-        [e['stance'], e['direction'], e['midpop']],
-        [e['stance'], e['direction'], e['lowpop']],
-        [e['stance'], e['direction'], e['spin'], e['highpop']],
-        [e['stance'], e['direction'], e['spin'], e['pressure']],
-        [e['stance'], e['direction'], e['spin'], "to", e['grind']],
-        [e['stance'], e['direction'], e['midpop'], "to", e['grind']],
-        [e['stance'], e['direction'], e['lowpop'], "to", e['grind']],
-        [e['stance'], e['direction'], e['spin'], e['highpop'], "to", e['grind']],
-        [e['stance'], e['direction'], e['flips'], "to", e['flat'], "to", e['flips']],
-        [e['stance'], e['direction'], e['lowpop'], "to", e['flat'], "to", e['flips']],
-        [e['stance'], e['direction'], e['midpop'], "to", e['flat'], "to", e['midpop']],
-        [e['stance'], e['direction'], e['midpop'], "to", e['grind'], "to", e['highpop']],
-        [e['stance'], e['direction'], e['spin'], e['midpop'], "to", e['flat'], "to", e['midpop']],
-        [e['stance'], e['direction'], e['spin'], e['midpop'], "to", e['flat'], "to", e['highpop']],
-        [e['stance'], e['direction'], e['flips'], "to", e['flat'], "to", e['direction'], e['spin']],
-        [e['stance'], e['direction'], e['flips'], "to", e['flat'], "to", e['direction'], e['flips']],
-        [e['stance'], e['direction'], e['spin'], e['highpop'], "to", e['grind'], "to", e['highpop']],
-        [e['stance'], e['direction'], e['midpop'], "to", e['flat'], "to", e['direction'], e['spin']],
-        [e['stance'], e['direction'], e['midpop'], "to", e['grind'], "to", e['direction'], e['spin']],
-        [e['stance'], e['direction'], e['spin'], e['midpop'], "to", e['flat'], "to", e["direction"], e['flips']],
-        [e['stance'], e['direction'], e['spin'], e['midpop'], "to", e['flat'], "to", e["direction"], e['midpop']],
+        [grind, "to", highpop],
+        [stance, direction, midpop],
+        [stance, direction, lowpop],
+        [stance, direction, spin, highpop],
+        [stance, direction, spin, pressure],
+        [stance, direction, spin, "to", grind],
+        [stance, direction, midpop, "to", grind],
+        [stance, direction, lowpop, "to", grind],
+        [stance, direction, spin, highpop, "to", grind],
+        [stance, direction, flips, "to", flat, "to", flips],
+        [stance, direction, lowpop, "to", flat, "to", flips],
+        [stance, direction, midpop, "to", flat, "to", midpop],
+        [stance, direction, midpop, "to", grind, "to", highpop],
+        [stance, direction, spin, midpop, "to", flat, "to", midpop],
+        [stance, direction, spin, midpop, "to", flat, "to", highpop],
+        [stance, direction, flips, "to", flat, "to", direction, spin],
+        [stance, direction, flips, "to", flat, "to", direction, flips],
+        [stance, direction, spin, highpop, "to", grind, "to", highpop],
+        [stance, direction, midpop, "to", flat, "to", direction, spin],
+        [stance, direction, midpop, "to", grind, "to", direction, spin],
+        [stance, direction, spin, midpop, "to", flat, "to", direction, flips],
+        [stance, direction, spin, midpop, "to", flat, "to", direction, midpop],
     ]
 
-    return easy, medium, hard
+    return {
+        "easy": easy,
+        "medium": medium,
+        "hard": hard,
+    }
+
+def _resolve_combo(combo):
+    resolved = []
+    for item in combo:
+        if isinstance(item, list):
+            resolved.append(choice(item))
+        else:
+            resolved.append(item)
+    return resolved
 
 def _format(trick_list):
     output = " ".join(str(x) for x in trick_list).strip()
@@ -81,23 +91,18 @@ def _format(trick_list):
 def _apply_aliases(combo):
     for original in sorted(_aliases, key=len, reverse=True):
         combo = combo.replace(original, _aliases[original])
-        if "Modern Ghetto Bird 360" in combo:
-            combo = combo.replace("Modern Ghetto Bird 360", "Backside Hardflip 360")
+    combo = combo.replace("Modern Ghetto Bird 360", "Backside Hardflip 360")
     return combo
 
-def generate_trick(difficulty):
-    easy, medium, hard = _combo_pools(_random_elements())
-
-    pools = {
-        "easy": easy,
-        "medium": medium,
-        "hard": hard,
-    }
+def generate_trick(difficulty="random"):
+    pools = _combo_pools()
 
     if difficulty == "random":
-        pool = choice(list(pools.values()))
-    else:
-        pool = pools[difficulty]
+        difficulty = choice(list(pools))
 
-    combo = _apply_aliases(_format(choice(pool)))
+    combo = choice(pools[difficulty])
+    combo = _resolve_combo(combo)
+    combo = _format(combo)
+    combo = _apply_aliases(combo)
+
     return combo.replace(" to ", "\n↓\n")
