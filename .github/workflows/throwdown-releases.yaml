@@ -2,6 +2,15 @@ name: throwdown-release
 
 on:
   workflow_dispatch:
+    inputs:
+      release_type:
+        description: "Release type"
+        required: true
+        type: choice
+        options:
+          - Point release
+          - Major release
+        default: Point release
 
 jobs:
   flatpak:
@@ -37,6 +46,28 @@ jobs:
       contents: write
 
     steps:
+      - name: Get next version
+        id: version
+        run: |
+          current=$(gh release list --limit 1 --json tagName --jq '.[0].tagName')
+
+          echo "Current version: $current"
+
+          version=${current#v}
+          major=${version%.*}
+          minor=${version#*.}
+
+          if [ "${{ inputs.release_type }}" = "Major release" ]; then
+            next="v$((major + 1)).0"
+          else
+            next="v${major}.$((minor + 1))"
+          fi
+
+          echo "Next version: $next"
+          echo "tag=$next" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - name: Download Flatpak artifacts
         uses: actions/download-artifact@v5
         with:
@@ -51,14 +82,8 @@ jobs:
       - name: Create new release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "build-${{ github.run_number }}"
-          name: "Throwdown build ${{ github.run_number }}"
-          body: |
-            Automated Flatpak build from commit ${{ github.sha }}.
-
-            ## Downloads
-
-            - `throwdown-x86_64.flatpak` — x86_64
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
           files: release-files/*.flatpak
           generate_release_notes: true
           prerelease: true
