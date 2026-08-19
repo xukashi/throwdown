@@ -22,9 +22,11 @@ flat = _tricks["flat"]
 def _combo_pools():
     easy = [
         [stance, midpop],
+        [stance, highpop],
         [stance, "to", grind],
         [stance, direction, spin],
         [stance, direction, highpop],
+        [stance, highpop, "Late", direction, spin],
     ]
 
     medium = [
@@ -38,6 +40,7 @@ def _combo_pools():
         [stance, direction, spin, "to", flat],
         [stance, direction, spin, "to", grind],
         [stance, direction, highpop, "to", grind],
+        [stance, midpop, "Late", direction, spin],
     ]
 
     hard = [
@@ -49,6 +52,8 @@ def _combo_pools():
         [stance, direction, spin, "to", grind],
         [stance, direction, lowpop, "to", grind],
         [stance, direction, midpop, "to", grind],
+        [stance, lowpop, "Late", direction, spin],
+        [stance, pressure, "Late", direction, spin],
         [stance, direction, spin, highpop, "to", grind],
         [stance, direction, midpop, "to", flat, "to", midpop],
         [stance, direction, lowpop, "to", flat, "to", highpop],
@@ -81,7 +86,7 @@ def _resolve_combo(combo):
         else:
             resolved.append(item)
 
-    if "Manual" in resolved or "Nose Manual" in resolved:
+    if any("Manual" in item for item in resolved):
         for i, item in enumerate(combo):
             if item is highpop:
                 resolved[i] = choice(highpop)
