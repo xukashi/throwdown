@@ -8,6 +8,7 @@ on:
         required: true
         type: choice
         options:
+          - Bug fix
           - Point release
           - Major release
         default: Point release
@@ -54,13 +55,16 @@ jobs:
           echo "Current version: $current"
 
           version=${current#v}
-          major=${version%.*}
-          minor=${version#*.}
+
+          IFS='.' read -r major minor patch <<< "$version"
+          patch=${patch:-0}
 
           if [ "${{ inputs.release_type }}" = "Major release" ]; then
             next="v$((major + 1)).0"
-          else
+          elif [ "${{ inputs.release_type }}" = "Point release" ]; then
             next="v${major}.$((minor + 1))"
+          elif [ "${{ inputs.release_type }}" = "Bug fix release" ]; then
+            next="v${major}.${minor}.$((patch + 1))"
           fi
 
           echo "Next version: $next"
@@ -86,5 +90,5 @@ jobs:
           name: ${{ steps.version.outputs.tag }}
           files: release-files/*.flatpak
           generate_release_notes: true
-          prerelease: true
-          make_latest: false
+          prerelease: false
+          make_latest: true
