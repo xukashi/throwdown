@@ -20,12 +20,10 @@
 		"Kickflip",
 		"Heelflip",
 		"Body Varial",
-		"BS Pop shove-it",
-		"FS Pop shove-it",
-		"BS Pop shove-it 360",
-		"FS Pop shove-it 360",
-		"BS Pop shove-it Body Varial",
-		"FS Pop shove-it Body Varial"
+		"BS Pop Shove-it",
+		"FS Pop Shove-it",
+		"BS Pop Shove-it 360",
+		"FS Pop Shove-it 360"
 	],
 
 	"midpop": [
@@ -101,6 +99,10 @@
 		"Frontside FS Pop Shove-it 360": "FS Bigger Spin",
 		"Backside BS Pop Shove-it 360": "BS Bigger Spin",
 		"Nollie Hardflip Late Backside 180": "Ghetto Bird",
-		"Hardflip Late Backside 360": "Diamond Flip"
+		"Hardflip Late Backside 360": "Diamond Flip",
+		"Backside FS Pop Shove-it": "BS Pop Shove-it Body Varial",
+		"Frontside BS Pop Shove-it": "FS Pop Shove-it Body Varial",
+		"Backside FS Pop Shove-it 360": "BS Anti Spin",
+		"Frontside BS Pop Shove-it 360": "FS Anti Spin"
 	}
 }
