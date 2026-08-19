@@ -8,9 +8,9 @@ on:
         required: true
         type: choice
         options:
-          - Bug fix
-          - Point release
           - Major release
+          - Point release
+          - Bug fix release
         default: Point release
 
 jobs:
