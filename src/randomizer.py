@@ -19,8 +19,6 @@ pressure = _tricks["pressure"]
 grind = _tricks["grind"]
 flat = _tricks["flat"]
 
-flips = highpop[:2]
-
 def _combo_pools():
     easy = [
         [stance, midpop],
@@ -33,8 +31,8 @@ def _combo_pools():
         [stance, lowpop],
         [stance, pressure],
         [stance, direction, midpop],
-        [stance, flips, "to", flat],
         [stance, direction, pressure],
+        [stance, highpop, "to", flat],
         [grind, "to", direction, spin],
         [stance, direction, spin, highpop],
         [stance, direction, spin, "to", flat],
@@ -44,27 +42,27 @@ def _combo_pools():
 
     hard = [
         [grind, "to", highpop],
-        [stance, direction, midpop],
         [stance, direction, lowpop],
+        [stance, direction, midpop],
         [stance, direction, spin, highpop],
         [stance, direction, spin, pressure],
         [stance, direction, spin, "to", grind],
-        [stance, direction, midpop, "to", grind],
         [stance, direction, lowpop, "to", grind],
+        [stance, direction, midpop, "to", grind],
         [stance, direction, spin, highpop, "to", grind],
-        [stance, direction, flips, "to", flat, "to", flips],
-        [stance, direction, lowpop, "to", flat, "to", flips],
         [stance, direction, midpop, "to", flat, "to", midpop],
+        [stance, direction, lowpop, "to", flat, "to", highpop],
+        [stance, direction, highpop, "to", flat, "to", highpop],
         [stance, direction, midpop, "to", grind, "to", highpop],
         [stance, direction, spin, midpop, "to", flat, "to", midpop],
         [stance, direction, spin, midpop, "to", flat, "to", highpop],
-        [stance, direction, flips, "to", flat, "to", direction, spin],
-        [stance, direction, flips, "to", flat, "to", direction, flips],
-        [stance, direction, spin, highpop, "to", grind, "to", highpop],
         [stance, direction, midpop, "to", flat, "to", direction, spin],
+        [stance, direction, spin, highpop, "to", grind, "to", highpop],
+        [stance, direction, highpop, "to", flat, "to", direction, spin],
         [stance, direction, midpop, "to", grind, "to", direction, spin],
-        [stance, direction, spin, midpop, "to", flat, "to", direction, flips],
+        [stance, direction, highpop, "to", flat, "to", direction, highpop],
         [stance, direction, spin, midpop, "to", flat, "to", direction, midpop],
+        [stance, direction, spin, midpop, "to", flat, "to", direction, highpop],
     ]
 
     return {
@@ -76,22 +74,32 @@ def _combo_pools():
 def _resolve_combo(combo):
     resolved = []
     for item in combo:
-        if isinstance(item, list):
+        if item is highpop:
+            resolved.append(choice(highpop[:2]))
+        elif isinstance(item, list):
             resolved.append(choice(item))
         else:
             resolved.append(item)
+
+    if "Manual" in resolved or "Nose Manual" in resolved:
+        for i, item in enumerate(combo):
+            if item is highpop:
+                resolved[i] = choice(highpop)
+
     return resolved
 
 def _format(trick_list):
     output = " ".join(str(x) for x in trick_list).strip()
     if output.startswith("to"):
         output = "Ollie " + output
+
     return output
 
 def _apply_aliases(combo):
     for original in sorted(_aliases, key=len, reverse=True):
         combo = combo.replace(original, _aliases[original])
     combo = combo.replace("Modern Ghetto Bird 360", "Backside Hardflip 360")
+
     return combo
 
 def generate_trick(difficulty="random"):
